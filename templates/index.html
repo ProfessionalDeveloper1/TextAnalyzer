@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+<!-- Webpage title -->
+{% block title %}Home{% endblock title %}
+
+<!-- Webpage body starts here -->
+{% block body %}
+
+  <!-- Alert-->
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Welcome To TextUtiles!</strong> Hope this will help you please rate us.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <!-- Text bar and checkox -->
+  <div class="container">
+    <form action="/analyze" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">
+          <h2>Please enter your text below</h2>
+        </label>
+        <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="8"></textarea>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" name="removepunctuations" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">RemovePunctuations</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">NewLine Remover</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" name="removeextraspaces" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Remove extraSpaces</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" name="uppercase" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Upper Case</label>
+      </div>
+      <button type="submit" class="btn btn-outline-primary mt-2">Analyze Text</button>
+    </form>
+  </div>
+
+<!-- Webpage body ends here -->
+{% endblock body %}

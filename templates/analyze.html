@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<!-- Webpage title -->
+{% block title %}Text analyzed{% endblock title %}
+
+<!-- Webpage body starts here -->
+{% block body %}
+
+    <!-- Success alert -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> Your text have been analyzed.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    <!-- Display analyzed text -->
+    <div class="container">
+        <h2>Your Text is Analyzed</h2>
+        <hr class="divider">
+        <pre><h6>{{Analyzed_text}}</h6></pre>
+    </div>
+
+<!-- Webpage body ends here -->
+{% endblock body %}
